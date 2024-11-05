@@ -7,7 +7,7 @@ const math = require('math')
 
 newsr.get('/',async(req,res)=>{
     try {
-        var url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=aaa0dc6482d849d6a6045bbe9154f712';
+        var url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=';
 
         const news_get =await axios.get(url)
         res.render('news',{articles:news_get.data.articles})
@@ -28,7 +28,7 @@ newsr.post('/search',async(req,res)=>{
     // console.log(req.body.search)
 
     try {
-        var url = `http://newsapi.org/v2/everything?q=${search}&apiKey=aaa0dc6482d849d6a6045bbe9154f712`
+        var url = `http://newsapi.org/v2/everything?q=${search}&apiKey=`
 
         const news_get =await axios.get(url)
         res.render('news',{articles:news_get.data.articles})
